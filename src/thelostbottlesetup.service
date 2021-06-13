@@ -1,0 +1,14 @@
+[Unit]
+Description=The lost Bottle of Rum Setup
+
+[Service]
+ExecStart=/srv/thelostbottle/setup.sh
+WorkingDirectory=/srv/thelostbottle
+#StandardInput=socket
+#StandardOutput=socket
+#User=thelostbottle
+LimitNPROC=100
+LimitCPU=60
+
+[Install]
+WantedBy=multi-user.target

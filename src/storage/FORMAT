@@ -1,0 +1,103 @@
+/**
+JSON Format
+{
+	"rooms": {
+		"<name>": {
+			"w": <int>,
+			"h": <int>,
+			"saveable": <bool>,
+			"background": <filename>,
+			"exits": [
+				{
+					"x": <int>,
+					"y": <int>,
+					"room": <roomname>,
+					"targetx": <int>,
+					"targety": <int>,
+					"open": <boolean>
+				},
+				...
+			],
+			"blocks": [ // automatically on all edges except where the exits are
+				{
+					"img": <filename>,
+					"pos": [
+						[<int>, <int>],
+						...
+					]
+				},
+				...
+			],
+			"elements": [
+				{
+					"x": <int>,
+					"y": <int>,
+					"id": <int>,
+					"value": <string> // optional?
+				}
+			]
+		},
+		...
+	},
+	"globals": {
+		"posx": <int>,
+		"posy": <int>,
+		"room": <string>
+	}
+}
+
+Elements:
+1: Sign, val: text on it
+2: control panel, val: arbitrary info
+3: key, val: color(-id)
+**/
+
+/**
+Binary Format
+Ints: little-endian? 2 byte
+Strings: 2-byte size integer, followed by string (no \0 byte)
+Boolean: X (true), O (false)
+optional: if exists: preceeded by a 0x01, else just a 0x00
+
+Name	Size	Offset	Desc
+------------------------------Header
+Magic	4		0		'affm' Magic Bytes
+nRooms	2		4		number of Rooms
+--------------------------Globals
+Magic	2		0		'gl' Magic bytes
+x		2		2		xpos <int>
+y		2		4		ypos <int>
+roomsz	2		6		size of current room string
+room	roomsz	8		current room
+--------------------------Rooms
+Magic	2		0		'rd' Magic Bytes
+name	X				name <string>
+savable	1		4		<bool>
+w		2		6		width <int>
+h		2		8		height <int>
+backImg	2		10		background image <string>
+nExits	2		12		number of exits <int>
+nBlocks	2		14		number of blocks <int>
+nElem	2		16		number of elements <int>
+--------------------------Exits
+x		2		0		xpos <int>
+y		2		2		ypos <int>
+open	2		4		0 / 1
+targetx	2		6		<int>
+targety	2		8		<int>
+room	sz+2	10		room name <string>
+--------------------------Blocks
+Magic	2		0		'bl' Magic Bytes
+szImg	2		2		size of image name
+img		szImg	X		string name of image
+nPos	2		X		number of positions
+pos		4*nPos	X		all positions each with <x> and <y> ints
+--------------------------Elements
+Magic	2		0		'el' Magic bytes
+id		2		6		id <int>
+x		2		2		xpos <int>
+y		2		4		ypos <int>
+val		?		8		<optional|string>
+----
+mapname					<string>
+**/

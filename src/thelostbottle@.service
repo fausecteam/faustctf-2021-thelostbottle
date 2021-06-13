@@ -1,0 +1,11 @@
+[Unit]
+Description=The lost Bottle of Rum
+
+[Service]
+ExecStart=-/usr/bin/stdbuf -o0 /srv/thelostbottle/run_server.sh
+WorkingDirectory=/srv/thelostbottle
+#StandardInput=socket
+#StandardOutput=socket
+User=thelostbottle
+LimitNPROC=500
+LimitCPU=60

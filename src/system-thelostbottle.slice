@@ -1,0 +1,5 @@
+[Slice]
+CPUAccounting=yes
+CPUQuota=20%
+MemoryAccounting=yes
+MemoryLimit=500M

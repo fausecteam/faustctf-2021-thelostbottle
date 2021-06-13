@@ -1,0 +1,166 @@
+{
+	"rooms": {
+		"entrance": {
+			"w": 20,
+			"h": 10,
+			"saveable": true,
+			"background": "water.png",
+			"exits": [
+				{
+					"x": 19,
+					"y": 6,
+					"room": "control_room",
+					"targetx": 1,
+					"targety": 3,
+					"open": false,
+					"keypad": null
+				}
+			],
+			"blocks": [
+				{
+					"img": ":resources:/images/tiles/cactus.png",
+					"pos": [
+						[13, 5],
+						[13, 6],
+						[14, 5],
+						[14, 6]
+					]
+				},
+				{
+					"img": "assets/signrum.png",
+					"pos": [
+						[16, 6]
+					]
+				}
+			],
+			"elements": {
+				"unashdn": {
+					"id": 3,
+					"x": 10,
+					"y": 10,
+					"value": "red"
+				},
+				"askjdkn": {
+					"id": 2,
+					"x": 6,
+					"y": 5,
+					"value": "opendoor:19:6"
+				},
+				"asdjaknmn": {
+					"id": 4,
+					"x": 8,
+					"y": 1,
+					"value": "intact"
+				}
+			}
+		},
+		"control_room": {
+			"w": 10,
+			"h": 10,
+			"saveable": true,
+			"background": "water.png",
+			"exits": [
+				{
+					"x": 0,
+					"y": 3,
+					"room": "entrance",
+					"targetx": 18,
+					"targety": 6,
+					"open": true,
+					"keypad": null
+				},
+				{
+					"x": 9,
+					"y": 5,
+					"room": "secret_room",
+					"targetx": 1,
+					"targety": 1,
+					"open": true,
+					"keypad": "magic"
+				}
+			],
+			"blocks": [
+			],
+			"elements": {
+				"asdkjwrcqiuwn": {
+					"id": 5,
+					"x": 1,
+					"y": 8,
+					"value": "1|80%"
+				},
+				"awuexwwiuanca": {
+					"id": 5,
+					"x": 2,
+					"y": 8,
+					"value": "2|30%"
+				},
+				"ciuwrhiucacca": {
+					"id": 5,
+					"x": 3,
+					"y": 8,
+					"value": "3|90%"
+				},
+				"qqijsadsadjjj": {
+					"id": 5,
+					"x": 4,
+					"y": 8,
+					"value": "1|95%"
+				},
+				"naiduoaoafafj": {
+					"id": 5,
+					"x": 5,
+					"y": 8,
+					"value": "2|10%"
+				},
+				"sadhasjdhjh": {
+					"id": 1,
+					"x": 7,
+					"y": 7,
+					"value": "The rum is a lie"
+				},
+				"sadhasblabla": {
+					"id": 1,
+					"x": 9,
+					"y": 1,
+					"value": "I am the captain, and I like 'magic'"
+				}
+			}
+		},
+		"secret_room": {
+			"w": 10,
+			"h": 10,
+			"saveable": false,
+			"background": "water.png",
+			"exits": [
+				{
+					"x": 0,
+					"y": 2,
+					"room": "control_room",
+					"targetx": 8,
+					"targety": 5,
+					"open": true,
+					"keypad": null
+				}
+			],
+			"blocks": [],
+			"elements": {
+				"gsdsgskh": {
+					"id": 1,
+					"x": 5,
+					"y": 5,
+					"value": "FAUST_AAAAAAABKl/MJ+kAAAAAMHITYPjsr9dJ"
+				}
+			}
+		}
+	},
+	"globals": {
+		"posx": 1,
+		"posy": 1,
+		"room": "entrance"
+	},
+	"dreams": [
+		[10, "You become relaxed and dream of an island far far away with a hidden treasure."],
+		[50, "Life is beautiful. You are on your own island filled with wildlife and listen to the singing of birds above you."],
+		[80, "You start to hallucinating about the meaning of life and start to beliebe that the answer to life is FAUST_AAAAAAABKl/MJ+kAAAAAMHITYPjsr9dJ"]
+	]
+}

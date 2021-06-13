@@ -1,0 +1,83 @@
+{
+	"pwd": "test",
+	"rooms": {
+		"entrance": {
+			"w": 20,
+			"h": 10,
+			"saveable": true,
+			"background": "cave.png",
+			"exits": [
+				{
+					"x": 19,
+					"y": 6,
+					"room": "control_room",
+					"targetx": 1,
+					"targety": 3,
+					"open": false
+				}
+			],
+			"blocks": [
+				{
+					"img": "stone.png",
+					"pos": [
+						[13, 5],
+						[13, 6],
+						[14, 5],
+						[14, 6]
+					]
+				}
+			],
+			"elements": [
+				{
+					"id": 3,
+					"x": 10,
+					"y": 10,
+					"value": "red"
+				},
+				{
+					"id": 2,
+					"x": 6,
+					"y": 5,
+					"value": "opendoor:19:6"
+				},
+				{
+					"id": 4,
+					"x": 8,
+					"y": 1,
+					"value": "intact"
+				}
+			]
+		},
+		"control_room": {
+			"w": 10,
+			"h": 10,
+			"saveable": false,
+			"background": "cave.png",
+			"exits": [
+				{
+					"x": 0,
+					"y": 3,
+					"targetx": 18,
+					"targety": 6,
+					"room": "entrance",
+					"open": true
+				}
+			],
+			"blocks": [
+			],
+			"elements": [
+				{
+					"id": 1,
+					"x": 5,
+					"y": 5,
+					"value": "My Text"
+				}
+			]
+		}
+	},
+	"globals": {
+		"posx": 1,
+		"posy": 1,
+		"room": "entrance"
+	}
+}

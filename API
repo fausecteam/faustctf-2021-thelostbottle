@@ -1,0 +1,42 @@
+HELO - init communication
+	cmd		req	'new' / 'load'
+	map		req	string (z.B. 'maps/smallmap.json')
+	<-
+	room	json
+	pos		(int, int)
+
+UPLD - upload a new map 
+	map		string(base64 encoded)
+	<-
+	mapname	string
+
+ROOM - enter a new room
+	exit	[int, int]
+	pwd		string or None
+	<-
+	room	json
+	pos		(int, int)
+
+INAK - interact with element
+	pos		[int, int]
+	<-
+	-- Sign --
+	<>		string
+	-- Control --
+	<>		'ACK'
+	-- key -- (tut nichts)
+	<>		'ACK'
+	-- barrel --
+	<>		'broken'
+	-- bottle --
+	<>		string
+
+SIGN - write sign text
+	pos		[int, int]
+	value	string
+
+SAVE - get a a savestate
+	??
+
+GBYE - end communication
+	no response

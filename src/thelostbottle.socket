@@ -1,0 +1,11 @@
+[Unit]
+Description=The Lost bottle of Rum
+
+[Socket]
+ListenStream=5555
+Accept=true
+NoDelay=true
+MaxConnections=200
+
+[Install]
+WantedBy=sockets.target
